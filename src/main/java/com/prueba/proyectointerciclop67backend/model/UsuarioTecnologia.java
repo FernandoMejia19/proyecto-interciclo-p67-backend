@@ -7,6 +7,7 @@ import jakarta.persistence.*;
 public class UsuarioTecnologia {
     @Id
     @GeneratedValue (strategy = GenerationType.IDENTITY)
+    @Column (name="usutec_id")
     private Integer idUsuTecnologia;
     @ManyToOne
     @JoinColumn(name= "usutec_usuario_id")

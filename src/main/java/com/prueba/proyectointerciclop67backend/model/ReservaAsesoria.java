@@ -4,13 +4,16 @@ package com.prueba.proyectointerciclop67backend.model;
 import jakarta.persistence.*;
 
 @Entity
-@Table (name="reservas-asesorias")
+@Table (name="reserva_asesoria")
 public class ReservaAsesoria {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column (name="resa_id")
     private Integer id;
     @Column (name="resa_motivo")
     private String motivo;
+    @Column (name="resa_estado")
+    private String estado;
     @ManyToOne
     @JoinColumn (name="resa_id_asesoria")
     private Asesoria asesoria;
@@ -23,8 +26,7 @@ public class ReservaAsesoria {
     @ManyToOne
     @JoinColumn (name ="resa_id_programador")
     private Usuario programador;
-    @Column (name="resa_estado")
-    private String estado;
+
 
     public ReservaAsesoria(){}
 

@@ -14,7 +14,7 @@ public class Asesoria {
     @Column (name="ases_fecha")
     private LocalDate fecha;
     @ManyToOne
-    @JoinColumn (name="ases_id_programador")
+    @JoinColumn (name="ases_id_programador_fk")
     private Usuario programador;
     public Asesoria(){}
 
