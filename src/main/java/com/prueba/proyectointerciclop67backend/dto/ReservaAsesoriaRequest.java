@@ -2,7 +2,7 @@ package com.prueba.proyectointerciclop67backend.dto;
 
 public class ReservaAsesoriaRequest {
     private String motivo;
-    private String estado;
+    private String estado="pendiente";
     private Integer idAsesoria;
     private Integer idHoraAsesoria;
     private Integer idSolicitante;
@@ -17,6 +17,10 @@ public class ReservaAsesoriaRequest {
         this.idHoraAsesoria = idHoraAsesoria;
         this.idSolicitante = idSolicitante;
         this.idProgramador = idProgramador;
+    }
+    public ReservaAsesoriaRequest(String motivo,String estado){
+        this.motivo=motivo;
+        this.estado=estado;
     }
 
     public String getMotivo() {

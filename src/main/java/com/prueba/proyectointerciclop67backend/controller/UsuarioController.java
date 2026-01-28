@@ -10,7 +10,7 @@ import org.springframework.web.bind.annotation.*;
 import java.util.List;
 
 @RestController
-@RequestMapping("/usuarios")
+@RequestMapping("/api/usuarios")
 public class UsuarioController {
     @Autowired
     private UsuarioRepository usuarioRepository;
@@ -23,6 +23,11 @@ public class UsuarioController {
     @GetMapping("/{id}")
     public ResponseEntity<Usuario> getClienteById (@PathVariable Integer id){
         Usuario u=usuarioRepository.findById(id).orElseThrow(()-> new ResourceNotFoundException("No existe el Usuario con el ID" + id));
+        return ResponseEntity.ok(u);
+    }
+    @GetMapping("/nombre/{nombre}")
+    public ResponseEntity<Usuario> getClienteByName(@PathVariable String nombre){
+        Usuario u = usuarioRepository.findByNombre(nombre).orElseThrow(()-> new ResourceNotFoundException("No existe el Usuario con el nombre" + nombre));
         return ResponseEntity.ok(u);
     }
     @PostMapping

@@ -2,13 +2,13 @@ package com.prueba.proyectointerciclop67backend.dto;
 
 public class TecnologiaProyectoRequest {
     private Integer idProyecto;
-    private Integer idTecnologia;
+    private String tecnologia;
 
     public TecnologiaProyectoRequest(){}
 
-    public TecnologiaProyectoRequest(Integer idTecnologia, Integer idProyecto) {
-        this.idTecnologia = idTecnologia;
+    public TecnologiaProyectoRequest(Integer idProyecto, String tecnologia) {
         this.idProyecto = idProyecto;
+        this.tecnologia = tecnologia;
     }
 
     public Integer getIdProyecto() {
@@ -19,11 +19,11 @@ public class TecnologiaProyectoRequest {
         this.idProyecto = idProyecto;
     }
 
-    public Integer getIdTecnologia() {
-        return idTecnologia;
+    public String getTecnologia() {
+        return tecnologia;
     }
 
-    public void setIdTecnologia(Integer idTecnologia) {
-        this.idTecnologia = idTecnologia;
+    public void setTecnologia(String tecnologia) {
+        this.tecnologia = tecnologia;
     }
 }

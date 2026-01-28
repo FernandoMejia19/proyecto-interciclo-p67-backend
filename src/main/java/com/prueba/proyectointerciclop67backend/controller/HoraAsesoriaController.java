@@ -20,7 +20,7 @@ public class HoraAsesoriaController {
     @Autowired
     private AsesoriaRepository asesoriaRepository;
     @GetMapping
-    public List<HoraAsesoria> getAllHoras(){
+    public List<HoraAsesoria> getAll(){
         return horaAsesoriaRepository.findAll();
     }
     @GetMapping("/{id}")

@@ -13,7 +13,7 @@ import org.springframework.web.bind.annotation.*;
 import java.util.List;
 
 @RestController
-@RequestMapping("/proyectos")
+@RequestMapping("/api/proyectos")
 public class ProyectoController {
     @Autowired
     private ProyectoRepository proyectoRepository;
@@ -24,6 +24,7 @@ public class ProyectoController {
     public List<Proyecto> getAll(){
         return proyectoRepository.findAll();
     }
+
 
     @GetMapping("/{id}")
     public ResponseEntity<Proyecto> getProyectoById(@PathVariable Integer id){
