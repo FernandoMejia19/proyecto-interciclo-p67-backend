@@ -32,6 +32,9 @@ public class Usuario {
     private String github;
     @Column (name="usu_email")
     private String email;
+    @JsonIgnore //no va a enviar al front
+    @Column (name="usu_contrasena")
+    private String contrasena;
     @Column (name="usu_rol")
     private String rol;
     @Column(name = "usu_fotoperfil")
@@ -45,7 +48,7 @@ public class Usuario {
 
     }
 
-    public Usuario(String nombre, String ciudad, String pais, String descripcion, String facebook, String linkedin, String celular, String github, String email, String rol, String foto) {
+    public Usuario(String nombre, String ciudad, String pais, String descripcion, String facebook, String linkedin, String celular, String github, String email, String contrasena, String rol, String foto, List<Proyecto> proyectos) {
         this.nombre = nombre;
         this.ciudad = ciudad;
         this.pais = pais;
@@ -55,8 +58,26 @@ public class Usuario {
         this.celular = celular;
         this.github = github;
         this.email = email;
+        this.contrasena = contrasena;
         this.rol = rol;
-        this.foto=foto;
+        this.foto = foto;
+        this.proyectos = proyectos;
+    }
+
+    public String getContrasena() {
+        return contrasena;
+    }
+
+    public void setContrasena(String contrasena) {
+        this.contrasena = contrasena;
+    }
+
+    public List<Proyecto> getProyectos() {
+        return proyectos;
+    }
+
+    public void setProyectos(List<Proyecto> proyectos) {
+        this.proyectos = proyectos;
     }
 
     public Integer getId() {

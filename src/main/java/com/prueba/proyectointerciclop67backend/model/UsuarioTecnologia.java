@@ -9,18 +9,17 @@ public class UsuarioTecnologia {
     @GeneratedValue (strategy = GenerationType.IDENTITY)
     @Column (name="usutec_id")
     private Integer idUsuTecnologia;
-    @ManyToOne
-    @JoinColumn(name= "usutec_usuario_id")
-    private Usuario usuario;
+    @Column(name= "usutec_usuario_id")
+    private Integer usuario;
     @ManyToOne
     @JoinColumn (name="usutec_tecnologia_id")
     private Tecnologia tecnologia;
 
     public UsuarioTecnologia(){ }
 
-    public UsuarioTecnologia(Integer idUsuTecnologia, Usuario usuario, Tecnologia tecnologia) {
-        this.idUsuTecnologia = idUsuTecnologia;
-        this.usuario = usuario;
+    public UsuarioTecnologia( Integer idUsuario, Tecnologia tecnologia) {
+
+        this.usuario = idUsuario;
         this.tecnologia = tecnologia;
     }
 
@@ -32,11 +31,11 @@ public class UsuarioTecnologia {
         this.idUsuTecnologia = idUsuTecnologia;
     }
 
-    public Usuario getUsuario() {
+    public Integer getUsuario() {
         return usuario;
     }
 
-    public void setUsuario(Usuario usuario) {
+    public void setUsuario(Integer usuario) {
         this.usuario = usuario;
     }
 
